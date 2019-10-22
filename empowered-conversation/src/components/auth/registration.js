@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { connect } from "react-redux";
+import { postRegistration } from "../../actions/action";
 
 const Registration = props => {
+  console.log(props.registration);
   const [user, setUser] = useState({ username: "", password: "" });
 
   const changeHandler = e => {
@@ -11,13 +14,14 @@ const Registration = props => {
   const submitHandler = e => {
     e.preventDefault();
     console.log("submit registration");
-    axios
-      .post(
-        `https://empowered-conversations-bw.herokuapp.com/api/auth/register`,
-        user
-      )
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
+    // axios
+    //   .post(
+    //     `https://empowered-conversations-bw.herokuapp.com/api/auth/register`,
+    //     user
+    //   )
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log(err));
+    props.postRegistration(user);
     props.history.push("/login");
   };
 
@@ -51,4 +55,13 @@ const Registration = props => {
   );
 };
 
-export default Registration;
+const mapStateToProps = state => {
+  return {
+    registration: state
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { postRegistration }
+)(Registration);

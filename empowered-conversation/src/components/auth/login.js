@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { userLogin } from "../../actions/action";
 
 const Login = props => {
+  console.log(props.token);
   const [login, setLogin] = useState({ username: "", password: "" });
 
   const changeHandler = e => {
@@ -9,8 +12,14 @@ const Login = props => {
 
   const submitHandler = e => {
     e.preventDefault();
+    props.userLogin(login);
+    props.history.push("/home");
     console.log("submit login");
   };
+
+  useEffect(() => {
+    localStorage.setItem("token", JSON.stringify(props.token));
+  }, [props.token]);
 
   return (
     <form onSubmit={submitHandler}>
@@ -42,4 +51,13 @@ const Login = props => {
   );
 };
 
-export default Login;
+const mapStateToProps = state => {
+  return {
+    token: state.token
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { userLogin }
+)(Login);
