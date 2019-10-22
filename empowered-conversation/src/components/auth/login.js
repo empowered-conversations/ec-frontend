@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components"
 
 const Login = props => {
   const [login, setLogin] = useState({ username: "", password: "" });
@@ -12,9 +13,33 @@ const Login = props => {
     console.log("submit login");
   };
 
+ const LoginFormCont = styled.div `
+ margin: 5% 5% 5% 5%;
+ border: solid 5px #594157;
+ display: flex;
+ justify-content: center;
+ background-color: #BEE7E8
+ `
+
+const StyledForm= styled.form `
+margin: 2% 2% 2% 2%;
+
+
+`
+const Header = styled.h2 `
+margin: 5% 5% 5% 30%;
+font-size: 240%;
+color: #594157;
+`
+const StyledButton = styled.button `
+margin: 5% 5% 5% 30%;
+`
+
+
   return (
-    <form onSubmit={submitHandler}>
-      <h2>Login</h2>
+    <LoginFormCont>
+    <StyledForm onSubmit={submitHandler}>
+      <Header>Login</Header>
       <div>
         <label>
           username:
@@ -37,8 +62,9 @@ const Login = props => {
           />
         </label>
       </div>
-      <button>Login</button>
-    </form>
+      <StyledButton>Login</StyledButton>
+    </StyledForm>
+    </LoginFormCont>
   );
 };
 
