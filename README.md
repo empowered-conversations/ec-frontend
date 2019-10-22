@@ -1,1 +1,1 @@
-# ec-frontend dev chao-ji
+# ec-frontend dev
