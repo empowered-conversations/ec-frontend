@@ -33,9 +33,30 @@ const Home = props => {
     e.preventDefault();
     console.log(`submit`);
     axios
-      .post(`https://empowered-conversations-bw.herokuapp.com/text`, info)
-      .then(res => console.log(res));
+      .post(`https://empowered-conversations-bw.herokuapp.com/text`, {
+        "friend's name": info.otherName,
+        "friend's number": info.otherPhone,
+        "your name": info.userName,
+        "your number": info.userPhone
+      })
+
+      .then(res => console.log(res))
+      .then(props.history.push("/confirmed"));
+
+    setDisplayModal(false);
+    setInfo({
+      userName: "",
+      userPhone: "",
+      otherName: "",
+      otherPhone: ""
+    });
   };
+
+  useEffect(() => {
+    axios
+      .get(`https://empowered-conversations-bw.herokuapp.com/text`)
+      .then(res => console.log(res));
+  }, []);
 
   console.log(checked);
 
