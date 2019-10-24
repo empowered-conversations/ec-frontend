@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { userLogin } from "../../actions/action";
 
@@ -13,14 +13,10 @@ const Login = props => {
   const submitHandler = e => {
     e.preventDefault();
     props.userLogin(login);
-
+    localStorage.setItem("token", JSON.stringify(props.token));
     props.history.push("/home");
     console.log("submit login");
   };
-
-  useEffect(() => {
-    localStorage.setItem("token", JSON.stringify(props.token));
-  }, [props.token]);
 
   return (
     <form onSubmit={submitHandler}>
