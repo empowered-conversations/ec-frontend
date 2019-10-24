@@ -47,7 +47,12 @@ const Registration = props => {
             onChange={changeHandler}
           />
         </div>
-        <button className="regis_btn">Register</button>
+        <button
+          disabled={user.username.length === 0 || user.password.length === 0}
+          className="regis_btn"
+        >
+          Register
+        </button>
       </form>
     </div>
   );

@@ -1,4 +1,135 @@
-/* The Modal (background) */
+.regis_form_container {
+  background-color: black;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.regis_form_container h2 {
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+.regis_form {
+  background-color: lightsalmon;
+  width: 50%;
+  height: 200px;
+  margin: 5% 0 0 0;
+  padding: 2%;
+  text-align: center;
+  border: 2px solid lightgrey;
+}
+
+.regis_form .username_container {
+  height: 50px;
+  width: 100%;
+}
+
+.regis_form .username_container input {
+  height: 50%;
+  width: 80%;
+  margin-top: 5%;
+  border: 1px black solid;
+}
+
+.regis_form .password_container {
+  height: 50px;
+  width: 100%;
+}
+
+.regis_form .password_container input {
+  height: 50%;
+  width: 80%;
+  margin-top: 5%;
+  border: 1px black solid;
+}
+
+.regis_btn {
+  width: 80%;
+  height: 20px;
+  margin-top: 10%;
+  background-color: lightblue;
+  color: black;
+  border: 1px black solid;
+}
+
+.regis_btn:disabled {
+  background-color: lightgrey;
+  color: white;
+}
+
+.login_form_container {
+  background-color: black;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_form_container h2 {
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+.login_form {
+  background-color: lightsalmon;
+  width: 50%;
+  height: 200px;
+  margin: 5% 0 0 0;
+  padding: 2%;
+  text-align: center;
+  border: 2px solid lightgrey;
+}
+
+.login_username_container {
+  height: 50px;
+  width: 100%;
+}
+
+.login_form_container input {
+  height: 50%;
+  width: 80%;
+  margin-top: 5%;
+  border: 1px black solid;
+}
+
+.login_password_container {
+  height: 50px;
+  width: 100%;
+}
+
+.login_password_container input {
+  height: 50%;
+  width: 80%;
+  margin-top: 5%;
+  border: 1px black solid;
+}
+
+::placeholder {
+  color: black;
+}
+
+.login_btn {
+  width: 80%;
+  height: 20px;
+  margin-top: 10%;
+  background-color: lightgrey;
+  color: black;
+  border: 1px black solid;
+}
+
+.login_btn:disabled {
+  background-color: lightgrey;
+  color: white;
+}
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -197,9 +328,9 @@ position: fixed;
  }
 
  .homeBody h1{
-     font-size: 300%;
+     font-size: 200%;
      color: lightsalmon;
-     margin: 5% 5% 5% 42%;
+     margin: 5% 5% 5% 44%;
  }
 
 .homePageForm{
