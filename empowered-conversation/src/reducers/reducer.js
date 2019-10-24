@@ -12,7 +12,8 @@ const initialState = {
   register: { username: "" },
   isLogining: false,
   isRegistering: false,
-  error: "",
+  error: false,
+  errMsg: "",
   token: ""
 };
 
@@ -23,7 +24,8 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isRegistering: true,
-        error: false
+        error: false,
+        errMsg: ""
       };
     case REGISTRATION_SUCCESS:
       return {
@@ -31,18 +33,22 @@ export const reducer = (state = initialState, action) => {
         register: {
           username: action.payload.user.username
         },
-        isRegistering: false
+        isRegistering: false,
+        error: false,
+        errMsg: ""
       };
     case REGISTRATION_FAIL:
       return {
         ...state,
         isRegistering: false,
-        error: action.payload
+        error: true,
+        errMsg: action.payload
       };
     case LOGIN_START:
       return {
         ...state,
         isLogining: true,
+        errMsg: "",
         error: false
       };
     case LOGIN_SUCCESS:
@@ -52,13 +58,16 @@ export const reducer = (state = initialState, action) => {
           username: action.payload.user.username
         },
         token: action.payload.token,
-        isLogining: false
+        isLogining: false,
+        error: false,
+        errMsg: ""
       };
     case LOGIN_FAIL:
       return {
         ...state,
         isLogining: false,
-        error: action.payload
+        errMsg: action.payload,
+        error: true
       };
   }
   return state;
