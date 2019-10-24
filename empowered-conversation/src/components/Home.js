@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { connect } from "react-redux";
+import UserCard from "./UserCard";
 
 const Home = props => {
   const [info, setInfo] = useState({
@@ -8,6 +10,8 @@ const Home = props => {
     otherName: "",
     otherPhone: ""
   });
+
+  console.log(props.username);
 
   const [displayModal, setDisplayModal] = useState(false);
   const [checked, setChecked] = useState(false);
@@ -63,6 +67,7 @@ const Home = props => {
   return (
     <div>
       <h1>Home Page</h1>
+      <UserCard name={props.username} />
       <form>
         <div>
           <label>
@@ -139,4 +144,13 @@ const Home = props => {
   );
 };
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    username: state.login.username
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  {}
+)(Home);
