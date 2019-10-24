@@ -4,16 +4,16 @@ import styled from "styled-components";
 const UserCard = props => {
   const CardStyle = styled.div`
     margin: 5% 25% 5% 25%;
-    border: solid 5px #594157;
+    border: 5px lightgrey solid;
     display: flex;
     justify-content: center;
-    background-color: #bee7e8;
+    background-color: lightsalmon;
   `;
 
   const Header = styled.h2`
     margin: 5% 5% 5% 10%;
     font-size: 240%;
-    color: #594157;
+    color: white;
   `;
 
   return (

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import UserCard from "./UserCard";
+import styled from "styled-components";
 
 const Home = props => {
   const [info, setInfo] = useState({
@@ -62,14 +63,18 @@ const Home = props => {
 
   console.log(checked);
 
+ 
+
   return (
-    <div>
+    <div className= 'homeBody'>
       <h1>Home Page</h1>
       <UserCard name={props.username} />
-      <form>
-        <div>
-          <label>
-            Please input your name:
+      <div className="homePageFormContainer">
+      <form >
+        <div className="hopePageFormInputs">
+          <label >
+            <b>Please input your name:</b>
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <input
               type="text"
               name="userName"
@@ -78,9 +83,10 @@ const Home = props => {
             />
           </label>
         </div>
-        <div>
+        <div className="hopePageFormInputs">
           <label>
-            Please input your phone number:
+            <b>Please input your phone number:</b>
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <input
               type="tel"
               name="userPhone"
@@ -89,9 +95,10 @@ const Home = props => {
             />
           </label>
         </div>
-        <div>
+        <div className="hopePageFormInputs">
           <label>
-            Please input your friend or family member name:
+            <b>Please input your friend or family member name:</b>
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <input
               type="text"
               name="otherName"
@@ -100,9 +107,10 @@ const Home = props => {
             />
           </label>
         </div>
-        <div>
+        <div className="hopePageFormInputs">
           <label>
-            Please input your friend or family member phone number:
+            <b>Please input your friend or family member phone number:</b>
+             &nbsp;&nbsp;&nbsp;&nbsp;
             <input
               type="tel"
               name="otherPhone"
@@ -111,8 +119,9 @@ const Home = props => {
             />
           </label>
         </div>
-        <button onClick={continueHandler}>Continue</button>
+        <button onClick={continueHandler} className="hopePageFormButton">Continue</button>
       </form>
+      </div>
 
       <div id="myModal" className={displayModal ? `modal_diplay` : `modal`}>
         <div className="modal-content">
