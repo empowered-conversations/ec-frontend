@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import styled from "styled-components"
+import DemoCard from "./DemoCard";
 
 
 
@@ -7,12 +8,9 @@ import ReactDOM from 'react-dom';
 const DemoCard2 = props => {   
     return(
         <div>
-            {props.item.map((post, index) => {
+            {props.item.map((post) => {
                 return(
-                    <div key={index}>
-                        <h1>{post.name}</h1>
-                        <p>{post.number}</p>
-                        </div>
+                    <div> <DemoCard name= {post.name} number= {post.number}/> </div>
                 )
             })}
 

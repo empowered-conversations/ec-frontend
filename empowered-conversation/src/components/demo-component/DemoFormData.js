@@ -1,6 +1,5 @@
 import React, { useState,} from "react";
-// import styled from "styled-components"
-import { withFormik, Form, Field } from "formik";
+import styled from "styled-components"
 
 const DemoFormData = props => {
     const[formData, setFormData] = useState({
@@ -19,9 +18,12 @@ const DemoFormData = props => {
         props.addNewPost(formData)
         setFormData({name:"", number:""})
     }
+
+        
+   
     return(
         <div>
-            <form onSubmit={submitForm}>
+            <form onSubmit={submitForm} className= "formClass">
                 <input type= 'text' name='name' value={formData.name} placeholder= 'name' onChange={changeHandler}/>
                 <input type= 'text' name='number' value={formData.number} placeholder= 'number' onChange={changeHandler}/>
 

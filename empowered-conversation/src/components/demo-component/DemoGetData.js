@@ -23,10 +23,10 @@ function DemoGetData(){
 
     return (
         <section>
-            <Header>Demo Page</Header>
+            
             <div>
                 {userData.map((item) => {
-                return <div> <DemoCard name= {item["your name"]} number= {item["your number"]}/> </div>
+                return <div> <DemoCard name= {item["yourName"]} number= {item["yourNumber"]}/> </div>
                 })}
 
             </div>
