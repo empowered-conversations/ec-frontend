@@ -10,16 +10,16 @@ const DemoCard = (props) =>{
 
     const CardStyle = styled.div `
     margin: 5% 25% 5% 25%;
-    border: solid 5px #594157;
+    border: solid 5px lightgrey;
     display: flex;
     justify-content: center;
-    background-color: #BEE7E8;
+    background-color: lightsalmon;
     `
 
    const Header = styled.h2 `
    margin: 5% 5% 5% 5%;
    font-size: 240%;
-   color: #594157;
+//    color: lightsalmon;
    `
 
    const Para = styled.p `

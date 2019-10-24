@@ -7,6 +7,7 @@ import Registration from "./components/auth/registration";
 import Login from "./components/auth/login";
 import Home from "./components/Home";
 import MessageConfirm from "./components/MessageConfirm";
+import DemoApp from "./components/demo-component/DemoApp"
 
 function App(props) {
   console.log(`from app`, props.state);
@@ -17,6 +18,7 @@ function App(props) {
         <Route exact path="/login" component={Login} />
         <PrivateRoute exact path="/home" component={Home} />
         <Route exact path="/confirmed" component={MessageConfirm} />
+        <Route exact path="/demo" component={DemoApp} />
       </Switch>
     </Router>
   );

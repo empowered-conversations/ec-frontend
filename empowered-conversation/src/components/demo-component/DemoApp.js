@@ -21,9 +21,14 @@ function DemoApp() {
   display: flex;
   margin: 2% 5% 5% 40%;
   font-size: 400%;
+  color: lightsalmon;
+  `
+  const Appstyle = styled.div `
+  background-color: black;
+  border: 5px lightgrey solid;
   `
   return (
-    <div>
+    <Appstyle>
       <Header>Demo Page</Header>
       
       <FormStyle>
@@ -35,7 +40,7 @@ function DemoApp() {
       <div>
         <DemoGetData/>
       </div>
-  </div>
+  </Appstyle>
   );
 }
 
