@@ -40,7 +40,12 @@ const Login = props => {
             onChange={changeHandler}
           />
         </div>
-        <button className="login_btn">Login</button>
+        <button
+          disabled={login.username.length === 0 || login.password.length === 0}
+          className="login_btn"
+        >
+          Login
+        </button>
       </form>
     </div>
   );
