@@ -60,58 +60,64 @@ const Home = props => {
     localStorage.setItem("token", JSON.stringify(props.token));
   }, [props.token]);
 
-  console.log(checked);
-
   return (
-    <div>
-      <h1>Home Page</h1>
+    <div className="home_container">
       <UserCard name={props.username} />
-      <form>
-        <div>
-          <label>
-            Please input your name:
-            <input
-              type="text"
-              name="userName"
-              value={info.userName}
-              onChange={changeHandler}
-            />
-          </label>
+
+      <form className="home_form_container">
+        <p>
+          Fill up the form below and we will take care of the rest ! A message
+          will be sent to your friend and family member once your submit the
+          form.
+        </p>
+        <div className="input_el">
+          <input
+            type="text"
+            name="userName"
+            placeholder="your name"
+            value={info.userName}
+            onChange={changeHandler}
+          />
         </div>
-        <div>
-          <label>
-            Please input your phone number:
-            <input
-              type="tel"
-              name="userPhone"
-              value={info.userPhone}
-              onChange={changeHandler}
-            />
-          </label>
+        <div className="input_el">
+          <input
+            type="tel"
+            name="userPhone"
+            placeholder="your phone number"
+            value={info.userPhone}
+            onChange={changeHandler}
+          />
         </div>
-        <div>
-          <label>
-            Please input your friend or family member name:
-            <input
-              type="text"
-              name="otherName"
-              value={info.otherName}
-              onChange={changeHandler}
-            />
-          </label>
+        <div className="input_el">
+          <input
+            type="text"
+            name="otherName"
+            value={info.otherName}
+            placeholder="your friend or family member name"
+            onChange={changeHandler}
+          />
         </div>
-        <div>
-          <label>
-            Please input your friend or family member phone number:
-            <input
-              type="tel"
-              name="otherPhone"
-              value={info.otherPhone}
-              onChange={changeHandler}
-            />
-          </label>
+        <div className="input_el">
+          <input
+            type="tel"
+            name="otherPhone"
+            placeholder="your friend or family member phone number"
+            value={info.otherPhone}
+            onChange={changeHandler}
+          />
         </div>
-        <button onClick={continueHandler}>Continue</button>
+        <button
+          disabled={
+            info.userName.length === 0 ||
+            info.userPhone.length === 0 ||
+            info.otherName.length === 0 ||
+            info.otherPhone.length === 0
+          }
+          className="conti_btn"
+          onClick={continueHandler}
+        >
+          Continue
+        </button>
       </form>
 
       <div id="myModal" className={displayModal ? `modal_diplay` : `modal`}>
