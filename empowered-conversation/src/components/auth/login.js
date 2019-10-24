@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { userLogin } from "../../actions/action";
 
@@ -13,42 +13,36 @@ const Login = props => {
   const submitHandler = e => {
     e.preventDefault();
     props.userLogin(login);
-
+    localStorage.setItem("token", JSON.stringify(props.token));
     props.history.push("/home");
     console.log("submit login");
   };
 
-  useEffect(() => {
-    localStorage.setItem("token", JSON.stringify(props.token));
-  }, [props.token]);
-
   return (
-    <form onSubmit={submitHandler}>
+    <div className="login_form_container">
       <h2>Login</h2>
-      <div>
-        <label>
-          username:
+      <form className="login_form" onSubmit={submitHandler}>
+        <div className="login_username_container">
           <input
             type="text"
             name="username"
             value={login.username}
             onChange={changeHandler}
+            placeholder="username"
           />
-        </label>
-      </div>
-      <div>
-        <label>
-          password:
+        </div>
+        <div className="login_password_container">
           <input
             type="password"
             name="password"
             value={login.password}
+            placeholder="password"
             onChange={changeHandler}
           />
-        </label>
-      </div>
-      <button>Login</button>
-    </form>
+        </div>
+        <button className="login_btn">Login</button>
+      </form>
+    </div>
   );
 };
 

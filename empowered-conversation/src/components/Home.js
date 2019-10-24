@@ -11,7 +11,7 @@ const Home = props => {
     otherPhone: ""
   });
 
-  console.log(props.username);
+  console.log(props.username, props.token);
 
   const [displayModal, setDisplayModal] = useState(false);
   const [checked, setChecked] = useState(false);
@@ -57,10 +57,8 @@ const Home = props => {
   };
 
   useEffect(() => {
-    axios
-      .get(`https://empowered-conversations-bw.herokuapp.com/text`)
-      .then(res => console.log(res));
-  }, []);
+    localStorage.setItem("token", JSON.stringify(props.token));
+  }, [props.token]);
 
   console.log(checked);
 
@@ -146,7 +144,8 @@ const Home = props => {
 
 const mapStateToProps = state => {
   return {
-    username: state.login.username
+    username: state.login.username,
+    token: state.token
   };
 };
 

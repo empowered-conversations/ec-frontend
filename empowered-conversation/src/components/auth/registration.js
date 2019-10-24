@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+
 import { connect } from "react-redux";
 import { postRegistration } from "../../actions/action";
 
@@ -26,32 +26,30 @@ const Registration = props => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <h2>Register</h2>
-      <div>
-        <label>
-          username:
+    <div className="regis_form_container">
+      <h2>Registration</h2>
+      <form className="regis_form" onSubmit={submitHandler}>
+        <div className="username_container">
           <input
             type="text"
             name="username"
             value={user.username}
+            placeholder="username"
             onChange={changeHandler}
           />
-        </label>
-      </div>
-      <div>
-        <label>
-          password:
+        </div>
+        <div className="password_container">
           <input
             type="password"
             name="password"
             value={user.password}
+            placeholder="password"
             onChange={changeHandler}
           />
-        </label>
-      </div>
-      <button>Register</button>
-    </form>
+        </div>
+        <button className="regis_btn">Register</button>
+      </form>
+    </div>
   );
 };
 

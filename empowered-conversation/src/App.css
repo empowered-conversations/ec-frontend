@@ -1,8 +1,129 @@
-/* The Modal (background) */
+.regis_form_container {
+  background-color: black;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.regis_form_container h2 {
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+.regis_form {
+  background-color: lightsalmon;
+  width: 50%;
+  height: 200px;
+  margin: 5% 0 0 0;
+  padding: 2%;
+  text-align: center;
+  border: 2px solid lightgrey;
+}
+
+.regis_form .username_container {
+  height: 50px;
+  width: 100%;
+}
+
+.regis_form .username_container input {
+  height: 50%;
+  width: 80%;
+  margin-top: 5%;
+  border: 1px black solid;
+}
+
+.regis_form .password_container {
+  height: 50px;
+  width: 100%;
+}
+
+.regis_form .password_container input {
+  height: 50%;
+  width: 80%;
+  margin-top: 5%;
+  border: 1px black solid;
+}
+
+.regis_btn {
+  width: 80%;
+  height: 20px;
+  margin-top: 10%;
+  background-color: lightgrey;
+  color: black;
+  border: 1px black solid;
+}
+
+.login_form_container {
+  background-color: black;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_form_container h2 {
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+.login_form {
+  background-color: lightsalmon;
+  width: 50%;
+  height: 200px;
+  margin: 5% 0 0 0;
+  padding: 2%;
+  text-align: center;
+  border: 2px solid lightgrey;
+}
+
+.login_username_container {
+  height: 50px;
+  width: 100%;
+}
+
+.login_form_container input {
+  height: 50%;
+  width: 80%;
+  margin-top: 5%;
+  border: 1px black solid;
+}
+
+.login_password_container {
+  height: 50px;
+  width: 100%;
+}
+
+.login_password_container input {
+  height: 50%;
+  width: 80%;
+  margin-top: 5%;
+  border: 1px black solid;
+}
+
+::placeholder {
+  color: black;
+}
+
+.login_btn {
+  width: 80%;
+  height: 20px;
+  margin-top: 10%;
+  background-color: lightgrey;
+  color: black;
+  border: 1px black solid;
+}
+
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
