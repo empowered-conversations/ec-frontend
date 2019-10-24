@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components"
+import { connect } from "react-redux";
+import { userLogin } from "../../actions/action";
 
 const Login = props => {
+  console.log(props.token);
   const [login, setLogin] = useState({ username: "", password: "" });
 
   const changeHandler = e => {
@@ -10,31 +12,18 @@ const Login = props => {
 
   const submitHandler = e => {
     e.preventDefault();
+    props.userLogin(login);
+
+    props.history.push("/home");
     console.log("submit login");
   };
 
- const LoginFormCont = styled.div `
- margin: 5% 5% 5% 5%;
- border: solid 5px #594157;
- display: flex;
- justify-content: center;
- background-color: #BEE7E8
- `
-
-const StyledForm= styled.form `
-margin: 2% 2% 2% 2%;
+  useEffect(() => {
+    localStorage.setItem("token", JSON.stringify(props.token));
+  }, [props.token]);
 
 
-`
-const Header = styled.h2 `
-margin: 5% 5% 5% 30%;
-font-size: 240%;
-color: #594157;
-`
-const StyledButton = styled.button `
-margin: 5% 5% 5% 30%;
-`
-
+  
 
   return (
     <LoginFormCont>
@@ -68,4 +57,13 @@ margin: 5% 5% 5% 30%;
   );
 };
 
-export default Login;
+const mapStateToProps = state => {
+  return {
+    token: state.token
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { userLogin }
+)(Login);
