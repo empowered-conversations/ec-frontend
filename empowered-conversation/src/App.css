@@ -5,12 +5,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .regis_form_container h2 {
   text-align: center;
   width: 100%;
-
   color: white;
 }
 
@@ -18,7 +18,7 @@
   background-color: lightsalmon;
   width: 50%;
   height: 200px;
-  margin: 5% 0 0 25%;
+  margin: 5% 0 0 0;
   padding: 2%;
   text-align: center;
   border: 2px solid lightgrey;
@@ -49,6 +49,69 @@
 }
 
 .regis_btn {
+  width: 80%;
+  height: 20px;
+  margin-top: 10%;
+  background-color: lightgrey;
+  color: black;
+  border: 1px black solid;
+}
+
+.login_form_container {
+  background-color: black;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_form_container h2 {
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+.login_form {
+  background-color: lightsalmon;
+  width: 50%;
+  height: 200px;
+  margin: 5% 0 0 0;
+  padding: 2%;
+  text-align: center;
+  border: 2px solid lightgrey;
+}
+
+.login_username_container {
+  height: 50px;
+  width: 100%;
+}
+
+.login_form_container input {
+  height: 50%;
+  width: 80%;
+  margin-top: 5%;
+  border: 1px black solid;
+}
+
+.login_password_container {
+  height: 50px;
+  width: 100%;
+}
+
+.login_password_container input {
+  height: 50%;
+  width: 80%;
+  margin-top: 5%;
+  border: 1px black solid;
+}
+
+::placeholder {
+  color: black;
+}
+
+.login_btn {
   width: 80%;
   height: 20px;
   margin-top: 10%;
